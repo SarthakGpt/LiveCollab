@@ -14,8 +14,8 @@ function WelcomePage() {
         <h1>Welcome to Live Collab</h1>
         <p className="quote">"Connect, Create, Collaborate"</p>
         <div className="buttons">
-          <Link to="/login" className="btn" onClick={() => navigate('/Login')}>Login</Link>
-          <Link to="/signup" className="btn" onClick={() => navigate('/Signup')}>Sign Up</Link>
+          <Link to="/login" className="btns" onClick={() => navigate('/Login')}>Login</Link>
+          <Link to="/signup" className="btns" onClick={() => navigate('/Signup')}>Sign Up</Link>
         </div>
       </div>
     </div>
