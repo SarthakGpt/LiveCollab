@@ -8,7 +8,7 @@ export const initSocket = async () => {
     transports: ['websocket'],
   };
 
-  const socketURL = import.meta.env.VITE_BACKEND_URL;
+  const socketURL = process.env.VITE_BACKEND_URL;
 
   return io(socketURL, options);
 };
