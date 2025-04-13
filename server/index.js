@@ -123,7 +123,20 @@ app.post("/compile", async (req, res) => {
     res.status(500).json({ error: "Failed to compile code" });
   }
 });
+// --------------------------------------deployment
+const __dirname1 = path.resolve();
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static(path.join(__dirname1,"/client/build")));
 
+  app.get('*',(req,res)=>{
+    res.sendFile(path.resolve(__dirname1,"client","build","index.html"));
+  });
+}else{
+  app.get("/",(req,res)=>{
+    res.send("API is running Successfully");
+  })
+}
+// --------------------------------------deployment
 const PORT = process.env.PORT || 5000;
 server.listen(PORT,async function () {
   try{
