@@ -1,0 +1,377 @@
+.codemirror {
+  min-height: "calc(100vh -20px)";
+  font-size: "20px";
+  line-height: "1.6";
+  padding-top: "20px";
+}
+.compile-window {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 40%;
+  background-color: #f8f9fa;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.slide-up {
+  transform: translateY(0);
+}
+
+.slide-down {
+  transform: translateY(100%);
+}
+
+.output-box {
+  height: 150px;
+  background-color: #e9ecef;
+  padding: 10px;
+  overflow-y: auto;
+  border: 1px solid #ced4da;
+}
+/* ---------------------------------------------------- */
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh; /* Ensure the height covers the entire viewport */
+}
+
+/* Gradient blue background for the welcome page */
+.welcome-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #2c3e50, #34495e); /* Dark blue gradient */
+}
+
+.welcome-box {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  padding: 40px;
+  border-radius: 12px; /* Rounded corners for the box */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 80%; /* Flexible width */
+  max-width: 500px; /* Maximum width */
+}
+
+/* Logo Section */
+.logo {
+  width: 120px; /* Adjust the size of the logo */
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px; /* Space below the logo */
+  border-radius: 50%; /* Optional: Make logo round */
+}
+
+.logo-img {
+  width: 100px; /* Adjust size of the logo */
+  height: auto;
+}
+
+/* Title for welcome message */
+.welcome-box h1 {
+  font-size: 2.5rem; /* Larger font for the title */
+  color: #333; /* Dark text color */
+  margin-bottom: 20px;
+}
+
+/* Quote styles */
+.quote {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Buttons for Login and Sign Up */
+.buttons .btn {
+  margin: 10px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  display: inline-block; /* Align buttons horizontally */
+}
+
+.buttons .btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.buttons .btn:focus {
+  outline: none;
+  border: none;
+}
+
+/* login page */
+/* Global Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  padding: 20px; /* Prevents overflow on small screens */
+}
+
+/* Box Styling */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  width: 100px;
+  height: auto;
+  margin: 0 auto 20px auto;
+  display: block;
+  border-radius: 50%;
+}
+
+/* Input Fields */
+.input-field {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+.input-field input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Button */
+button.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.btn:hover {
+  background-color: #2980b9;
+}
+
+/* Error Message */
+.error {
+  color: red;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+/* Sign Up link */
+p {
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+p a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Global Styles */
+/* signup page */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh; /* Ensure the height covers the entire viewport */
+}
+
+/* Gradient background for the signup page */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #1e3c72, #2a5298); /* Gradient Blue */
+}
+
+.signup-box {
+  background: linear-gradient(to bottom right, #ffffff, #fafafa); /* Gradient background for the form */
+  padding: 40px;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px; /* Max width of the form */
+  text-align: center;
+}
+
+/* Title for the signup form */
+.signup-box h2 {
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.input-field {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-field label {
+  display: block;
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+.input-field input:focus {
+  outline: none;
+  border-color: #3498db; /* Blue border when input is focused */
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #f0f0f0; /* Blue color for the button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Link to Login */
+p {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #050505;
+}
+
+p a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+
+/* Logo Styles */
+.logo {
+  width: 120px; /* Adjust the size of the logo */
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px; /* Space below the logo */
+  border-radius: 50%; /* Optional: Make logo round */
+}
+
+/* Basic styling for login container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5; /* Background color for the page */
+}
+
+.login-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.input-field {
+  margin-bottom: 15px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
