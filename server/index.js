@@ -46,7 +46,7 @@ app.use("/api/auth", AuthRouter);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://livecollab-5202.onrender.com",
     methods: ["GET", "POST"],
   },
 });
