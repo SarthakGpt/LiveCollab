@@ -392,8 +392,8 @@ function EditorPage() {
               alt="Logo"
               className="rounded-circle border border-light"
               style={{
-                width: "90px",
-                height: "90px",
+                width: "75px",
+                height: "75px",
                 objectFit: "cover",
               }}
             />
