@@ -1,10 +1,10 @@
 const express = require("express");
 
-const bodyParser = require('body-parser');
-const connect = require('./models/db.js');
-const AuthRouter = require('./routes/AuthRouter.js');
+const bodyParser = require("body-parser");
+const connect = require("./models/db.js");
+const AuthRouter = require("./routes/AuthRouter.js");
 
-const path = require('path');
+const path = require("path");
 const app = express();
 const http = require("http");
 const { Server } = require("socket.io");
@@ -125,24 +125,24 @@ app.post("/compile", async (req, res) => {
 });
 // --------------------------------------deployment
 const __dirname1 = path.resolve();
-if(process.env.NODE_ENV === 'production'){
-  app.use(express.static(path.join(__dirname1,"/client/build")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "../client/build")));
 
-  app.get('*',(req,res)=>{
-    res.sendFile(path.resolve(__dirname1,"client","build","index.html"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname1, '../client/build/index.html'));
   });
-}else{
-  app.get("/",(req,res)=>{
+} else {
+  app.get("/", (req, res) => {
     res.send("API is running Successfully");
-  })
+  });
 }
 // --------------------------------------deployment
 const PORT = process.env.PORT || 5000;
-server.listen(PORT,async function () {
-  try{
-      await connect();
-      console.log(`server is running on ${PORT}`);
+server.listen(PORT, async function () {
+  try {
+    await connect();
+    console.log(`server is running on ${PORT}`);
   } catch (error) {
-      console.log(error);
+    console.log(error);
   }
-  });
+});
