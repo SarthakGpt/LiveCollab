@@ -33,7 +33,7 @@ function SignupPage() {
     }
 
     try {
-      const url = `http://localhost:5000/api/auth/signup`; // Adjust if you add /api
+      const url = `https://livecollab-5202.onrender.com/api/auth/signup`; // Adjust if you add /api
       const response = await fetch(url, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
